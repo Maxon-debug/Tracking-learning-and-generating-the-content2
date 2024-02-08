@@ -1,0 +1,243 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TopicExtractionWorkflow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1254,2818" sap2010:WorkflowViewState.IdRef="TopicExtractionWorkflow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SendingReportThroughTheOutlook" sap:VirtualizedContainerService.HintSize="546,2753" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="WeeklyReport" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Mail - Maxon Wanjeru - Outlook" sap:VirtualizedContainerService.HintSize="484,2642" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="01014e1d-6601-4871-a4ea-960e22435a09" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2425" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New mailNew'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" CvTextArea="107, 278, 59, 13" CvTextArgument="New mail" CvType="Text" DesignTimeRectangle="78, 270, 90, 30" DesignTimeScaleFactor="1" FriendlyName="'New mailNew'" FullSelectorArgument="&lt;webctrl class='flexContainer-159' parentid='innerRibbonContainer' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='flexContainer-159' parentid='innerRibbonContainer' tag='SPAN' type='' aaname='' check:innerText='&amp;#xD;&amp;#xA;New mail&amp;#xD;&amp;#xA;New mail (N) Create a new email message.' /&gt;" Guid="e6d5fa0d-4fee-4409-b923-e2ac28907d9b" InformativeScreenshot="88080ed5158ff4f8a5c0847b1f556b0e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'To'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Text="Rajab" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" DesignTimeRectangle="723, 384, 1150, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-role='textbox' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='textbox' tag='DIV' type='' class='T6Va1 VbY1P EditorClass aoWYQ' aaname='' /&gt;" Guid="ecbaa6b6-81b3-44d8-a537-a43c66cf7093" InformativeScreenshot="d8aca47bf4c7998b12db1158441d6968.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="650, 377, 63, 34" CvTextArea="673, 386, 17, 14" CvTextArgument="To" CvType="Button" DesignTimeRectangle="651, 378, 62, 32" ElementType="Text" FriendlyName="'To'" FullSelectorArgument="&lt;webctrl aaname='To' aria-role='button' parentid='docking_InitVisiblePart_0' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='To' aria-role='button' parentid='docking_InitVisiblePart_0' tag='DIV' type='' class='RecipientWellLabelWithContactPicker-label button-453' check:innerText='To' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IRIshaq Ngamate'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" DesignTimeRectangle="729, 426, 288, 48" DesignTimeScaleFactor="1" FriendlyName="'IRIshaq Ngamate'" FullSelectorArgument="&lt;webctrl parentid='FloatingSuggestionsItemId0' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='FloatingSuggestionsItemId0' tag='SPAN' type='' class='ms-Button-flexContainer flexContainer-451' aaname='' check:innerText='IR&amp;#xD;&amp;#xA;Ishaq Ngamate Rajab&amp;#xD;&amp;#xA;IshaqRajab@teach2give.com' /&gt;" Guid="ab6ba574-35c2-4f8b-994d-14df8be8f862" InformativeScreenshot="f49c12870bb59264517f24a5affbdc63.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Cc'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Text="Subject :RPA Cohort Weekly report for - Maxon" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" CvTextArea="650, 536, 203, 17" CvTextArgument="Type / to insert files and more" CvType="Text" DesignTimeRectangle="640, 525, 1112, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT TextField320'" FullSelectorArgument="&lt;webctrl id='TextField320' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='TextField320' tag='INPUT' type='text' class='ms-TextField-field field-457' aaname='' /&gt;" Guid="f94a4cab-44e1-4ead-b1ed-c376d5366da5" InformativeScreenshot="fa2e59f5d0fce3b91410179cc90095c6.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="650, 487, 39, 13" CvTextArgument="Add a" CvType="Text" DesignTimeRectangle="651, 475, 62, 32" ElementType="Text" FriendlyName="'Cc'" FullSelectorArgument="&lt;webctrl aaname='Cc' aria-role='button' parentid='docking_InitVisiblePart_0' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Cc' aria-role='button' parentid='docking_InitVisiblePart_0' tag='DIV' type='' class='RecipientWellLabelWithContactPicker-label button-453' check:innerText='Cc' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Insert'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" CvTextArea="397, 186, 36, 13" CvTextArgument="Insert" CvType="Text" DesignTimeRectangle="398, 186, 35, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Insert'" FullSelectorArgument="&lt;webctrl id='id__353' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='id__353' tag='SPAN' type='' class='ms-Button-label pivot-header-label label-179' aaname='Insert' check:innerText='Insert' /&gt;" Guid="7279856d-e6d9-4cc9-8eab-284048116f4e" InformativeScreenshot="97c44a899c99f4eb3d5bf9b7810e7140.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvTextArea="310, 186, 57, 16" CvTextArgument="Message" CvType="Text" DesignTimeRectangle="311, 186, 56, 14" ElementType="Text" FriendlyName="'Message'" FullSelectorArgument="&lt;webctrl id='id__350' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='id__350' tag='SPAN' type='' class='ms-Button-label pivot-header-label label-175' aaname='Message' check:innerText='Message' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Attach file'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" CvTextArea="101, 226, 65, 13" CvTextArgument="Attach file" CvType="Text" DesignTimeRectangle="103, 225, 62, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Attach file'" FullSelectorArgument="&lt;webctrl id='id__1096' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='id__1096' tag='SPAN' type='' class='ms-Button-label textContainer label-282' aaname='Attach file' check:innerText='Attach file' /&gt;" Guid="85351f47-3d01-4318-b506-97d0bfdb873b" InformativeScreenshot="c3479f1833f60a69dcedd1add4639761.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvElementArea="79, 223, 20, 20" CvType="Icon" DesignTimeRectangle="79, 223, 20, 20" FriendlyName="''" FullSelectorArgument="&lt;webctrl aaname='' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='' tag='I' type='' class='Q0K3G ___198tor0 f14t3ns0 fne0op0 fg4l7m0 fmd4ok8 f1sxfq9t' check:innerText='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEnSURBVEhL7ZQxi8IwAEb9q12CEIQuLl2KcLuD4nKcCC463KI3HLgVJIs33A1OzlkKR0AKUpDPpMnBaRuTthzc4IMOSdv3Spu0gz/mEXDy3wI50u0UUTdAEMiDUMQvDOnZnK6gRiDD56wPEi+w/8711IkjGYVybg2uZ0p4Bn7kUlR6WoH3QYDh1kRv8AiU5Xl2LRObJ9DZ3oyucQTK8uxjDNqb46CHBelb3CRgk4/BhB4XnDleI4rplxnfYAn4ygXYhIJOdvKOaiwBDrZMPOUMwlxXhfMjt5Er7ga0fIgkNROKGnKFPXBYoN9SrrAG+CpCtPq1PxvIFdZAsXlGTK+OhnKF/RXJ9b0eEJBeiLBLED7XlyvufmRFfhQQx+r/jA/OQFseAQfABZN4pvCw6wsPAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Browse this computer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" CvTextArea="113, 267, 136, 16" CvTextArgument="Browse this computer" CvType="Text" DesignTimeRectangle="80, 259, 331, 30" DesignTimeScaleFactor="1" FriendlyName="'Browse this computer'" FullSelectorArgument="&lt;webctrl parentname='Browse this computer' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='Browse this computer' tag='DIV' type='' class='linkContent-680' aaname='' check:innerText='&amp;#xD;&amp;#xA;Browse this computer' /&gt;" Guid="e263a7f8-07fa-41f0-a458-68aad4084cab" InformativeScreenshot="7e510d6b2b350f05c066ba7e0adfc02a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'File &amp;name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Text="C:\Users\USER\OneDrive\Documents\UiPath\Report Sending Automation System\MyGeneratedData" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable CvElementArea="196, 404, 347, 26" CvType="InputBox" DesignTimeRectangle="201, 410, 322, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="365f623f-c448-43dc-8c65-d3149344ce9d" InformativeScreenshot="f7818a7b85cd13b663001b80826d96bb.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvTextArea="137, 410, 55, 12" CvTextArgument="File name:" CvType="Text" DesignTimeRectangle="138, 409, 54, 15" ElementType="Text" FriendlyName="'File &amp;name'" FullSelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' check:text='File &amp;amp;name:' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OutputResponse.doc'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvTextArea="205, 132, 112, 14" CvTextArgument="OutputResponse.doc" CvType="Text" DesignTimeRectangle="204, 128, 236, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'OutputResponse.doc'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' role='editable text' check:text='OutputResponse.doc' /&gt;" Guid="20f1e153-7c36-48f3-a4a7-d85fb379fa58" InformativeScreenshot="d999c89708e5b988ec6a244c37ffe1e3.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvElementArea="555, 434, 87, 25" CvTextArea="583, 440, 30, 15" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="555, 434, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='unchecked' /&gt;" Guid="94911acc-ef97-417f-b37d-7baed4e3abb1" InformativeScreenshot="b4be7127595a835bb134788c6cbab5fd.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Send'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="01014e1d-6601-4871-a4ea-960e22435a09" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://outlook.office.com/mail/?actSwt=true" CvElementArea="651, 372, 90, 35" CvTextArea="675, 383, 34, 13" CvTextArgument="Send" CvType="Button" DesignTimeRectangle="672, 383, 40, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Send'" FullSelectorArgument="&lt;webctrl id='id__305' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='id__305' tag='SPAN' type='' class='ms-Button-label label-175' aaname='Send' check:innerText='Send' /&gt;" Guid="c3cbf515-5516-4421-9472-5643d4a11d77" InformativeScreenshot="d82e9c364e3752f06e99a025305925c4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvElementArea="729, 373, 34, 35" CvType="ArrowButton" DesignTimeRectangle="741, 382, 12, 16" FriendlyName="''" FullSelectorArgument="&lt;webctrl aaname='' parentid='docking_InitVisiblePart_0' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='' parentid='docking_InitVisiblePart_0' tag='I' type='' class='ms-Icon root-90 css-292 ms-Button-icon ms-Button-menuIcon menuIcon-449 ms-Button-menuIcon menuIcon-299' check:innerText='' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFBSURBVDhPY4ABtoDZAkD8Hoj/E4nfQ7VCAFBAQGPFq//YcMDN/1gxVCsCYNMMwtg0gzBYE3PKjvdA/B8f5sjeg9cAFMXCeXv+K5cfRBEDYe3idvwGGDUe/X/h0af/MPDgzTewGExeI6cevwEHbrz9//7r7/9BU879d+o+BTYAhIk2AAQaN92BawCxQQDGFwkpRQlYxZ6z/7n1C+6TbIDylKv/pfM3/Jco3PZfqObkf7gBIOfCvADCIDbIWzB5Yb/8/7LlO/9L5Kz/L9Z87r/IhPtgjBKIIENgAD0QeUzC/ovXHIFrxDCAEOZyzsDQDDOAYEJiSd7yn8ct879Q8+n/wt03UA2AAVAg4cNydRv+K8979F+s49x/4VZgGPTeRjUAOYoIYYWZd/8LN5/6L9x+EcWA9+gK8WH1ZS/+y0y+8R4AkqpV77w1krsAAAAASUVORK5CYII=" InformativeScreenshot="87312a755db699cfb8f129767094de5f.jpg" Selector="&lt;html app='chrome.exe' title='Mail - Maxon Wanjeru - Outlook' /&gt;" Title="Mail - Maxon Wanjeru - Outlook" Url="https://outlook.office.com/mail/?actSwt=true" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

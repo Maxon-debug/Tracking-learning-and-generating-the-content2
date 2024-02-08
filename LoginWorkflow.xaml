@@ -1,0 +1,451 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LoginWorkflow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_dt_RequiredData" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1668,3372</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>LoginWorkflow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Excel.Models</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LoginWorkflow" sap:VirtualizedContainerService.HintSize="1678,3307" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_RequiredData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Login to my uipath account &#xA;" AttachMode="ByInstance" DisplayName="Use Browser Edge: RPA and AI in Automation Training | UiPath" sap:VirtualizedContainerService.HintSize="1616,3196" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1582,2937" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Checking if the app is in the expected login state" DisplayName="Check App State 'pane'" sap:VirtualizedContainerService.HintSize="1520,2822" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1454" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DisplayName="Click 'My Dashboard'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_32" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/" CvTextArea="334, 188, 99, 12" CvTextArgument="MY DASHBOARD" CvType="Text" DesignTimeRectangle="331, 178, 106, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'My Dashboard'" FullSelectorArgument="&lt;webctrl class='nav-link' parentid='topMenu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='nav-link' parentid='topMenu' tag='A' type='' aaname='My Dashboard' check:innerText='MY DASHBOARD' /&gt;" Guid="1caddf7b-ddc4-44b0-9017-c8fdfa521e4f" InformativeScreenshot="32f1998dab4349fafa6d46d7302b48a1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='RPA and AI in Automation Training | UiPath' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="334, 188, 99, 12" CvTextArgument="MY DASHBOARD" CvType="Text" DesignTimeRectangle="335, 187, 98, 15" ElementType="Text" FriendlyName="'My Dashboard'" FullSelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' tag='SPAN' type='' class='' check:innerText='MY DASHBOARD' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My Learning Plans'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_33" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="168, 340, 123, 16" CvTextArgument="My Learning Plans" CvType="Text" DesignTimeRectangle="149, 327, 161, 44" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'My Learning Plans'" FullSelectorArgument="&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' type='' check:innerText='My Learning Plans' /&gt;" Guid="6d043c0a-528c-41ba-8611-ed6257226384" InformativeScreenshot="0829024a4b399c35ef59abf96d48c556.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="168, 339, 123, 17" CvTextArgument="My Learning Plans" CvType="Text" DesignTimeRectangle="168, 339, 123, 17" ElementType="Text" FriendlyName="'My Learning Plans'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enrolled, In progress'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_34" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="326, 392, 117, 15" CvTextArgument="Enrolled, In progress" CvType="Text" DesignTimeRectangle="321, 387, 180, 25" DesignTimeScaleFactor="1" FriendlyName="'Enrolled, In progress'" FullSelectorArgument="&lt;webctrl parentid='mat-select-2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='mat-select-2' tag='DIV' type='' class='mat-select-trigger' aaname='' check:innerText='Enrolled, In progress' /&gt;" Guid="2ad9d02c-0f51-4c0e-ae17-c663aa00f4cc" InformativeScreenshot="99dfe3975afd2ff517286b0c5020fba8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Visible">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvElementArea="39, 381, 262, 43" CvType="InputBox" DesignTimeRectangle="41, 381, 255, 42" ElementType="InputBox" FriendlyName="'msedge.exe UiPath'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'All'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_35" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvElementArea="311, 385, 19, 19" CvTextArea="336, 388, 17, 13" CvTextArgument="All" CvType="CheckBox" DesignTimeRectangle="297, 374, 180, 42" DesignTimeScaleFactor="1" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl id='mat-option-14' tag='MAT-OPTION' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mat-option-14' tag='MAT-OPTION' type='' class='mat-option mat-option-multiple' aaname='' check:innerText='All' /&gt;" Guid="cbfc3ce9-9b17-4903-9619-161d72e1b6ea" InformativeScreenshot="bc26b0c79f4892018c8ace43e2b452da.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="336, 388, 17, 13" CvTextArgument="All" CvType="Text" DesignTimeRectangle="337, 374, 124, 42" ElementType="Text" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl parentid='mat-option-14' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='mat-option-14' tag='SPAN' type='' class='mat-option-text' aaname='All' check:innerText='All' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Automation Developer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_36" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="229, 610, 323, 18" CvTextArgument="Automation Developer Associate Training" CvType="Text" DesignTimeRectangle="231, 608, 321, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Automation Developer'" FullSelectorArgument="&lt;webctrl aaname='Automation Developer Associate Training' isleaf='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Automation Developer Associate Training' isleaf='1' tag='A' type='' class='' check:innerText='Automation Developer Associate Training' /&gt;" Guid="8d5fa94b-429c-4edd-8f5b-c88f5cb89bc5" InformativeScreenshot="1792f6b53c51e2a365bcdadc5f21bf85.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Automation Developer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_37" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" DesignTimeRectangle="43, 590, 168, 94" DesignTimeScaleFactor="1" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-activity-dashboard&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;cr-content-list&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div' idx='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='custom-content-image ng-star-inserted' tag='DIV' aaname='' /&gt;" Guid="4761c762-6788-4a6a-b024-fbe46e6c174c" InformativeScreenshot="c1e23de61ca308dd28461b47d8b08f03.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="231, 605, 490, 50" ElementType="Text" FriendlyName="'Automation Developer'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-activity-dashboard&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;cr-content-list&amp;gt;div&amp;gt;div&amp;gt;h4' idx='2' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='H4' aaname='' check:innerText='Automation Developer Associate Training' /&gt;" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt_RequiredData]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='true'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Module'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Status'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h4' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NExtractData_5" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                    <uix:NExtractData.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="341, 48, 880, 2169" DesignTimeScaleFactor="1" FriendlyName="'Hide AllContinue'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-channel-detail&amp;gt;section&amp;gt;cr-channel-content&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" Guid="80cca081-e185-4c25-a825-d571b60dfbb4" InformativeScreenshot="4819dfd1f84198a53050515274c92d3e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation Developer Associate Training' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NExtractData.Target>
+                  </uix:NExtractData>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,2574" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login/Sign Up'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_38" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/" CvElementArea="1739, 175, 119, 29" CvTextArea="1754, 183, 89, 16" CvTextArgument="Login/Sign Up" CvType="Button" DesignTimeRectangle="1741, 177, 116, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Login/Sign Up'" FullSelectorArgument="&lt;webctrl class='login-btn-header' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='login-btn-header' tag='A' type='' aaname='Login/Sign Up' check:innerText='Login/Sign Up' /&gt;" Guid="47174588-ca04-459b-8341-6b393a4a9e80" InformativeScreenshot="fcb243e9973b835e5dc388973f9afc77.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='RPA and AI in Automation Training | UiPath' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'M '" sap:VirtualizedContainerService.HintSize="954,2262" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1454" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My Dashboard'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_39" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/" CvTextArea="334, 188, 99, 12" CvTextArgument="MY DASHBOARD" CvType="Text" DesignTimeRectangle="331, 178, 106, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'My Dashboard'" FullSelectorArgument="&lt;webctrl class='nav-link' parentid='topMenu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='nav-link' parentid='topMenu' tag='A' type='' aaname='My Dashboard' check:innerText='MY DASHBOARD' /&gt;" Guid="1caddf7b-ddc4-44b0-9017-c8fdfa521e4f" InformativeScreenshot="32f1998dab4349fafa6d46d7302b48a1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='RPA and AI in Automation Training | UiPath' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="334, 188, 99, 12" CvTextArgument="MY DASHBOARD" CvType="Text" DesignTimeRectangle="335, 187, 98, 15" ElementType="Text" FriendlyName="'My Dashboard'" FullSelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' tag='SPAN' type='' class='' check:innerText='MY DASHBOARD' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My Learning Plans'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_40" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="168, 340, 123, 16" CvTextArgument="My Learning Plans" CvType="Text" DesignTimeRectangle="149, 327, 161, 44" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'My Learning Plans'" FullSelectorArgument="&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' type='' check:innerText='My Learning Plans' /&gt;" Guid="6d043c0a-528c-41ba-8611-ed6257226384" InformativeScreenshot="0829024a4b399c35ef59abf96d48c556.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="168, 339, 123, 17" CvTextArgument="My Learning Plans" CvType="Text" DesignTimeRectangle="168, 339, 123, 17" ElementType="Text" FriendlyName="'My Learning Plans'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enrolled, In progress'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_41" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="326, 392, 117, 15" CvTextArgument="Enrolled, In progress" CvType="Text" DesignTimeRectangle="321, 387, 180, 25" DesignTimeScaleFactor="1" FriendlyName="'Enrolled, In progress'" FullSelectorArgument="&lt;webctrl parentid='mat-select-2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='mat-select-2' tag='DIV' type='' class='mat-select-trigger' aaname='' check:innerText='Enrolled, In progress' /&gt;" Guid="2ad9d02c-0f51-4c0e-ae17-c663aa00f4cc" InformativeScreenshot="99dfe3975afd2ff517286b0c5020fba8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Visible">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvElementArea="39, 381, 262, 43" CvType="InputBox" DesignTimeRectangle="41, 381, 255, 42" ElementType="InputBox" FriendlyName="'msedge.exe UiPath'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'All'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_42" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvElementArea="311, 385, 19, 19" CvTextArea="336, 388, 17, 13" CvTextArgument="All" CvType="CheckBox" DesignTimeRectangle="297, 374, 180, 42" DesignTimeScaleFactor="1" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl id='mat-option-14' tag='MAT-OPTION' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mat-option-14' tag='MAT-OPTION' type='' class='mat-option mat-option-multiple' aaname='' check:innerText='All' /&gt;" Guid="cbfc3ce9-9b17-4903-9619-161d72e1b6ea" InformativeScreenshot="bc26b0c79f4892018c8ace43e2b452da.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="336, 388, 17, 13" CvTextArgument="All" CvType="Text" DesignTimeRectangle="337, 374, 124, 42" ElementType="Text" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl parentid='mat-option-14' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='mat-option-14' tag='SPAN' type='' class='mat-option-text' aaname='All' check:innerText='All' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Automation Developer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_43" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="229, 610, 323, 18" CvTextArgument="Automation Developer Associate Training" CvType="Text" DesignTimeRectangle="231, 608, 321, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Automation Developer'" FullSelectorArgument="&lt;webctrl aaname='Automation Developer Associate Training' isleaf='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Automation Developer Associate Training' isleaf='1' tag='A' type='' class='' check:innerText='Automation Developer Associate Training' /&gt;" Guid="8d5fa94b-429c-4edd-8f5b-c88f5cb89bc5" InformativeScreenshot="1792f6b53c51e2a365bcdadc5f21bf85.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Automation Developer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_44" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" DesignTimeRectangle="43, 590, 168, 94" DesignTimeScaleFactor="1" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-activity-dashboard&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;cr-content-list&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div' idx='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='custom-content-image ng-star-inserted' tag='DIV' aaname='' /&gt;" Guid="4761c762-6788-4a6a-b024-fbe46e6c174c" InformativeScreenshot="c1e23de61ca308dd28461b47d8b08f03.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="231, 605, 490, 50" ElementType="Text" FriendlyName="'Automation Developer'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-activity-dashboard&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;cr-content-list&amp;gt;div&amp;gt;div&amp;gt;h4' idx='2' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='H4' aaname='' check:innerText='Automation Developer Associate Training' /&gt;" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt_RequiredData]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='true'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Module'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Status'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h4' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NExtractData_8" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NExtractData.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="341, 48, 880, 2169" DesignTimeScaleFactor="1" FriendlyName="'Hide AllContinue'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-channel-detail&amp;gt;section&amp;gt;cr-channel-content&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" Guid="80cca081-e185-4c25-a825-d571b60dfbb4" InformativeScreenshot="4819dfd1f84198a53050515274c92d3e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation Developer Associate Training' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NExtractData.Target>
+                        </uix:NExtractData>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,2045" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue with Google'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_45" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://account.uipath.com/login?state=hKFo2SBzaVhLWjR3cS12Q3Raa01tNmY1RFBEczZkSkI2MmxxOaFupWxvZ2luo3RpZNkgT2FtYU14dG1KdVlXYnppRnNxeUpiSVdUN2ZlVXBpamKjY2lk2SBBdWV1ZXpBcmtzQUJDOTROZjdBaUJKMjdXZmU0WUgzaA&amp;client=AueuezArksABC94Nf7AiBJ27Wfe4YH3h&amp;protocol=oauth2&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Facademy.uipath.com%2Foauth2%2Facs&amp;scope=openid%20profile%20email%20given_name%20family_name" CvElementArea="751, 590, 392, 42" CvTextArea="883, 603, 150, 17" CvTextArgument="Continue with Google" CvType="Button" DesignTimeRectangle="884, 601, 148, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Continue with Google'" FullSelectorArgument="&lt;webctrl aaname='Continue with Google' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Continue with Google' tag='P' type='' class='MuiTypography-root MuiTypography-body1 jss32 css-9grhbv' check:innerText='Continue with Google' /&gt;" Guid="d7b43329-fb77-4fc5-b088-f43916cc83d9" InformativeScreenshot="b7e43d1d0b78b22d4caba61854941a73.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Continue with UiPath' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="857, 600, 176, 20" CvTextArgument="G Continue with Google" CvType="Text" DesignTimeRectangle="753, 591, 390, 40" ElementType="Button" FriendlyName="'Continue with Google'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth jss27 jss28 css-ha55mf' aaname='Continue with Google' check:innerText='Continue with Google' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Maxon Wanjeru'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_46" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?prompt=select_account&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Faccount.uipath.com%2Flogin%2Fcallback&amp;scope=email%20profile&amp;state=pWlTMLd5hvV9PXMKkiu2CmgXLrJHi1_x&amp;client_id=728299124437-7jehbc7o304f05q191vsc8nuf0g9truf.apps.googleusercontent.com&amp;service=lso&amp;o2v=1&amp;theme=glif&amp;flowName=GeneralOAuthFlow" DesignTimeRectangle="724, 494, 448, 60" DesignTimeScaleFactor="1" FriendlyName="'Maxon Wanjerumaxonwanje…'" FullSelectorArgument="&lt;webctrl aria-role='link' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='link' tag='DIV' type='' class='lCoei YZVTmd SmR8' aaname='' check:innerText='Maxon Wanjeru&amp;#xD;&amp;#xA;maxonwanjeru1@gmail.com&amp;#xD;&amp;#xA;Signed out' /&gt;" Guid="32ff172e-b4bb-4611-9a36-11cc4c08ee81" InformativeScreenshot="32d603ce8dd31e4e16568cda96f6f693.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Sign in - Google Accounts' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="803, 508, 101, 15" CvTextArgument="Maxon Wanjeru" CvType="Text" DesignTimeRectangle="804, 506, 271, 20" ElementType="Text" FriendlyName="'Maxon Wanjeru'" FullSelectorArgument="&lt;webctrl aaname='Maxon Wanjeru' parentid='view_container' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Maxon Wanjeru' parentid='view_container' tag='DIV' type='' class='w1I7fb' check:innerText='Maxon Wanjeru' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_47" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://accounts.google.com/v3/signin/challenge/pwd?TL=AHNYTISNLnv7qMCDzI6cI26oXwRXmYQJZXii81TYrUB991utcMNRZk08lQc4TC21&amp;cid=2&amp;client_id=728299124437-7jehbc7o304f05q191vsc8nuf0g9truf.apps.googleusercontent.com&amp;continue=https://accounts.google.com/signin/oauth/consent?authuser%3Dunknown%26part%3DAJi8hANrX1USB46YrJs71bZVUqF1sSyTgqG70aODLXIcKGLOT_WsXl5yLcVxW6TOqBnr9p6ayEWKiFNyCeeqlvR-t8MARvNbRQyOzgTvgov3Vor5msV3eAsuaRsQrZRTUeyiAto9t5vCtLH8E5mo-N3ziaqMm-nP9H46iQb53vQK5oVxKdw5W2bAgf0mMVx7eGYRMLnex3Mc6ML912H2YR8PRM8BtYdV0A6o-iS9vg28pNipwUpozd-Gzf43qK9Sis-r5zKStIcUboWb16coLptWJAt4mQd41sKc2TTiCvBlNBHqc63KSNgraw9l1BILGpIvP21Sp6HVyGh4j-MHHu60cbVvMbYNskL7rB5ChZ9sJryUxu9qXO5S1OM-LlHjWSw0UXOddGpZvB7pRFugBpR4vMQ8TxBxKkJ6054KyKAOt1jRytYSst0oD-UzIan1WAvH2SefrBHD9NLFOWcWSv4jq_9-wy9GZw%26as%3DS-1643790440%253A1707023287976801%26client_id%3D728299124437-7jehbc7o304f05q191vsc8nuf0g9truf.apps.googleusercontent.com%26theme%3Dglif%23&amp;flowName=GeneralOAuthFlow&amp;hl=en_GB&amp;o2v=1&amp;prompt=select_account&amp;redirect_uri=https://account.uipath.com/login/callback&amp;response_type=code&amp;scope=email+profile&amp;service=lso&amp;state=pWlTMLd5hvV9PXMKkiu2CmgXLrJHi1_x&amp;theme=glif" CvElementArea="1051, 715, 82, 38" CvTextArea="1076, 727, 33, 13" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1053, 711, 79, 48" DesignTimeScaleFactor="1" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl class='VfPpkd-RLmnJb' parentid='passwordNext' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='VfPpkd-RLmnJb' parentid='passwordNext' tag='DIV' type='' aaname='' /&gt;" Guid="aac75f10-5703-4bec-b75b-a7086977fe40" InformativeScreenshot="61626fcb91ee7c4911b47bea8bb14ab9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Sign in – Google accounts' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvElementArea="1051, 715, 82, 38" CvTextArea="1076, 727, 33, 13" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1077, 725, 31, 20" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl parentid='passwordNext' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='passwordNext' tag='SPAN' type='' class='VfPpkd-vQzf8d' aaname='Next' check:innerText='Next' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My Dashboard'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_48" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Timeout="5000" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/" CvTextArea="334, 188, 99, 12" CvTextArgument="MY DASHBOARD" CvType="Text" DesignTimeRectangle="331, 178, 106, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'My Dashboard'" FullSelectorArgument="&lt;webctrl class='nav-link' parentid='topMenu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='nav-link' parentid='topMenu' tag='A' type='' aaname='My Dashboard' check:innerText='MY DASHBOARD' /&gt;" Guid="1caddf7b-ddc4-44b0-9017-c8fdfa521e4f" InformativeScreenshot="32f1998dab4349fafa6d46d7302b48a1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='RPA and AI in Automation Training | UiPath' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="334, 188, 99, 12" CvTextArgument="MY DASHBOARD" CvType="Text" DesignTimeRectangle="335, 187, 98, 15" ElementType="Text" FriendlyName="'My Dashboard'" FullSelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' tag='SPAN' type='' class='' check:innerText='MY DASHBOARD' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My Learning Plans'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_49" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="168, 340, 123, 16" CvTextArgument="My Learning Plans" CvType="Text" DesignTimeRectangle="149, 327, 161, 44" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'My Learning Plans'" FullSelectorArgument="&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' type='' check:innerText='My Learning Plans' /&gt;" Guid="6d043c0a-528c-41ba-8611-ed6257226384" InformativeScreenshot="0829024a4b399c35ef59abf96d48c556.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="168, 339, 123, 17" CvTextArgument="My Learning Plans" CvType="Text" DesignTimeRectangle="168, 339, 123, 17" ElementType="Text" FriendlyName="'My Learning Plans'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enrolled, In progress'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_50" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="326, 392, 117, 15" CvTextArgument="Enrolled, In progress" CvType="Text" DesignTimeRectangle="321, 387, 180, 25" DesignTimeScaleFactor="1" FriendlyName="'Enrolled, In progress'" FullSelectorArgument="&lt;webctrl parentid='mat-select-2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='mat-select-2' tag='DIV' type='' class='mat-select-trigger' aaname='' check:innerText='Enrolled, In progress' /&gt;" Guid="2ad9d02c-0f51-4c0e-ae17-c663aa00f4cc" InformativeScreenshot="99dfe3975afd2ff517286b0c5020fba8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Visible">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvElementArea="39, 381, 262, 43" CvType="InputBox" DesignTimeRectangle="41, 381, 255, 42" ElementType="InputBox" FriendlyName="'msedge.exe UiPath'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'All'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_51" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvElementArea="311, 385, 19, 19" CvTextArea="336, 388, 17, 13" CvTextArgument="All" CvType="CheckBox" DesignTimeRectangle="297, 374, 180, 42" DesignTimeScaleFactor="1" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl id='mat-option-14' tag='MAT-OPTION' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mat-option-14' tag='MAT-OPTION' type='' class='mat-option mat-option-multiple' aaname='' check:innerText='All' /&gt;" Guid="cbfc3ce9-9b17-4903-9619-161d72e1b6ea" InformativeScreenshot="bc26b0c79f4892018c8ace43e2b452da.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="336, 388, 17, 13" CvTextArgument="All" CvType="Text" DesignTimeRectangle="337, 374, 124, 42" ElementType="Text" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl parentid='mat-option-14' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='mat-option-14' tag='SPAN' type='' class='mat-option-text' aaname='All' check:innerText='All' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Automation Developer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_52" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" CvTextArea="229, 610, 323, 18" CvTextArgument="Automation Developer Associate Training" CvType="Text" DesignTimeRectangle="231, 608, 321, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Automation Developer'" FullSelectorArgument="&lt;webctrl aaname='Automation Developer Associate Training' isleaf='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Automation Developer Associate Training' isleaf='1' tag='A' type='' class='' check:innerText='Automation Developer Associate Training' /&gt;" Guid="8d5fa94b-429c-4edd-8f5b-c88f5cb89bc5" InformativeScreenshot="1792f6b53c51e2a365bcdadc5f21bf85.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Automation Developer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_53" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/activity-dashboard" DesignTimeRectangle="43, 590, 168, 94" DesignTimeScaleFactor="1" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-activity-dashboard&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;cr-content-list&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div' idx='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='custom-content-image ng-star-inserted' tag='DIV' aaname='' /&gt;" Guid="4761c762-6788-4a6a-b024-fbe46e6c174c" InformativeScreenshot="c1e23de61ca308dd28461b47d8b08f03.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="231, 605, 490, 50" ElementType="Text" FriendlyName="'Automation Developer'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-activity-dashboard&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;cr-content-list&amp;gt;div&amp;gt;div&amp;gt;h4' idx='2' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='H4' aaname='' check:innerText='Automation Developer Associate Training' /&gt;" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt_RequiredData]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='true'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Module'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Status'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h4' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='2' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='cr-content-list' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NExtractData_9" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="aa97724a-7042-4c2f-9369-3d8e1e07b830" Version="V3">
+                          <uix:NExtractData.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="341, 48, 880, 2169" DesignTimeScaleFactor="1" FriendlyName="'Hide AllContinue'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;content-raven&amp;gt;section&amp;gt;cr-channel-detail&amp;gt;section&amp;gt;cr-channel-content&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" Guid="80cca081-e185-4c25-a825-d571b60dfbb4" InformativeScreenshot="4819dfd1f84198a53050515274c92d3e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Automation Developer Associate Training' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NExtractData.Target>
+                        </uix:NExtractData>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="8, 157, 1876, 891" DesignTimeScaleFactor="1" FriendlyName="'M '" FullSelectorArgument="&lt;ctrl name='RPA and AI in Automation Training | UiPath - Microsoft Edge' role='pane' /&gt;&lt;ctrl idx='98' role='pane' /&gt;" FuzzySelectorArgument="&lt;ctrl name='RPA and AI in Automation Training | UiPath - Microsoft Edge' role='pane' /&gt;&lt;ctrl automationid='' role='pane' check:fulltext='M  HOME MY DASHBOARD COURSES LEARNING PLANS CAREER PATHS CERTIFICATION RESOURCES CONTACT Education' /&gt;" Guid="239520be-2082-44e6-8f58-b7c93917c1cd" InformativeScreenshot="f4beaee5832c3fa17548b7a51af9ee36.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='RPA and AI in Automation Training | UiPath - Personal - Microsof*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="8, 157, 1876, 891" DesignTimeScaleFactor="1" FriendlyName="'pane'" FullSelectorArgument="&lt;ctrl name='RPA and AI in Automation Training | UiPath - Microsoft Edge' role='pane' /&gt;&lt;ctrl idx='98' role='pane' /&gt;" FuzzySelectorArgument="&lt;ctrl name='RPA and AI in Automation Training | UiPath - Microsoft Edge' role='pane' /&gt;&lt;ctrl automationid='' role='pane' /&gt;" Guid="06bab517-6b86-4e57-94fc-90bf40e999c9" InformativeScreenshot="5e13e568acbb44a81108f53a1932a8db.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='RPA and AI in Automation Training | UiPath and 1 more page - Per*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Edge" IconBase64="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" InformativeScreenshot="29e873b4be02854385abd07a7a5c6666.jpg" Selector="&lt;html app='msedge.exe' title='RPA and AI in Automation Training | UiPath' /&gt;" Title="RPA and AI in Automation Training | UiPath" Url="https://academy.uipath.com/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
