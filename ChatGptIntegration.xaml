@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1254,1593</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1027,1589</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ChatGptIntegration_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,15 +103,16 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ChatGptIntegration" sap:VirtualizedContainerService.HintSize="603,1528" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ChatGptIntegration" sap:VirtualizedContainerService.HintSize="603,1524" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence - Connecting to chatgpt using the openai apis -" sap:VirtualizedContainerService.HintSize="541,1417" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence - Connecting to chatgpt using the openai apis -" sap:VirtualizedContainerService.HintSize="541,1413" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_apiKey" />
         <Variable x:TypeArguments="x:String" Name="str_gptModel" />
@@ -144,7 +145,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_apiKey]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">******************</InArgument>
+                <InArgument x:TypeArguments="x:String">["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"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -175,7 +176,7 @@ New  JProperty("content",""+ChatPrompt+"")
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[JsonConvert.SerializeObject(JsonObject)]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://api.openai.com/v1/chat/completions" sap:VirtualizedContainerService.HintSize="479,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[str_outputResponse]" TimeoutMS="60000">
+      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[JsonConvert.SerializeObject(JsonObject)]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://api.openai.com/v1/chat/completions" sap:VirtualizedContainerService.HintSize="479,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" OAuth2Token="[str_apiKey]" Result="[str_outputResponse]" TimeoutMS="60000">
         <ui:HttpClient.Attachments>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Attachments>
@@ -195,13 +196,13 @@ New  JProperty("content",""+ChatPrompt+"")
       </ui:HttpClient>
       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="479,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[str_outputResponse]" />
       <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="479,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[JObjectOutput]" JsonString="[str_outputResponse]" />
-      <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="MyGeneratedData\OutputResponse.doc" sap:VirtualizedContainerService.HintSize="479,135" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[JObjectOutput(&quot;choices&quot;)(0)(&quot;message&quot;)(&quot;content&quot;).ToString]" />
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendingReportThroughTheOutlook.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SendingReportThroughTheOutlook.xaml">
+      <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="MyGeneratedData\OutputResponse.doc" sap:VirtualizedContainerService.HintSize="479,133" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[JObjectOutput(&quot;choices&quot;)(0)(&quot;message&quot;)(&quot;content&quot;).ToString]" />
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMailsThroughGmail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SendMailsThroughGmail.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <Assign sap:VirtualizedContainerService.HintSize="479,83" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="479,82" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[out_FinalOutput]</OutArgument>
         </Assign.To>
