@@ -145,7 +145,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_apiKey]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">["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"]</InArgument>
+                <InArgument x:TypeArguments="x:String">["Api key"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
